@@ -1,0 +1,203 @@
+@use "variables" as v;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: v.$Cream;
+  font-family: v.$Font;
+}
+
+// ============ Main ============= //
+.main-container {
+
+  width: 375px;
+  padding: 65px 15px 0;
+  @media (min-width: 900px) {
+    width: 540px;
+  }
+  .section-balance {
+    background-color: v.$Soft-red;
+    height: 100px;
+    border-radius: 16px;
+    padding: 24px 20px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin-bottom: 15px;
+    &__d1 {
+      &-title {
+        font-size: 0.7em;
+        margin-bottom: 6px;
+      }
+      &-total {
+        font-weight: 700;
+        font-size: 1.4em;
+      }
+    }
+
+    &__balance-logo {
+      width: 60px;
+    }
+    @media (min-width: 900px) {
+      height: 126px;
+      &__d1 {
+        &-title {
+          font-size: 1em;
+          margin-bottom: 12px;
+        }
+        &-total {
+          font-size: 1.8em;
+        }
+      }
+
+      &__balance-logo {
+        width: 75px;
+      }
+    }
+  }
+
+  .section-chart {
+    background-color: v.$Very-pale-orange;
+    color: v.$Medium-brown;
+    border-radius: 15px;
+    height: 450px;
+    padding: 28px 24px;
+    &__title {
+      color: v.$Dark-brown;
+      font-size: 1.26em;
+      margin-bottom: 10px;
+    }
+    &__bars {
+//border: 1px solid;
+      display: flex;
+      justify-content: space-between;
+      height: 220px;
+      align-items: flex-end;
+      margin-bottom: 35px;
+      position: relative;
+      &-bar {
+        
+        background-color: v.$Soft-red;
+        width: 32px;
+        height: 200px;
+        border-radius: 5px;
+        &:hover {
+          cursor: pointer;
+          filter: brightness(1.2);
+        }
+      }
+      &-bar-label {
+        background-color: v.$Dark-brown;
+        width: 38px;
+        font-size: 0.5em;
+        color: v.$Very-pale-orange;
+        padding: 4px;
+        border-radius: 5px;
+        font-weight: 700;
+        position: absolute;
+        top: -25px;
+        left: -4px;
+        text-align: center;
+        //display: none;
+      }
+      &-bar-day {
+        
+        position: absolute;
+        bottom: -16px;
+        font-size: 0.6em;
+        width: 32px;
+        text-align: center;
+      }
+    }
+
+    &__analitics {
+        
+      display: flex;
+      justify-content: space-between;
+      padding: 24px 0 0;
+      font-size: 0.7em;
+      border-top: 2px solid v.$Cream;
+      &-total {
+        //border: 1px solid;
+        font-size: 1.13em;
+        margin-bottom: 8px;
+      }
+      &-value {
+        //border: 1px solid;
+        color: v.$Dark-brown;
+        font-weight: 700;
+        font-size: 2.2em;
+      }
+      &-porcentage {
+        //border: 1px solid;
+        color: v.$Dark-brown;
+        font-weight: 700;
+        text-align: right;
+        font-size: 1.25em;
+        margin-top: 30px;
+      }
+      &-month {
+        font-size: 1.25em;
+      }
+    }
+    @media (min-width: 900px) {
+      width: 512px;
+      height: 525px;
+      padding: 45px;
+      &__title {
+        font-size: 1.55em;
+      }
+      &__bars {
+        
+        margin-bottom: 50px;
+        &-bar {
+          width: 50px;
+        }
+        &-bar-label {
+          width: 55px;
+          font-size: 0.7em;
+          top: -32px;
+          left: 2px;
+        }
+        &-bar-day {
+          width: 55px;
+          bottom: -24px;
+          font-size: 0.8em;
+        }
+      }
+      &__analitics {
+        padding-top: 32px;
+        font-size: .9em;
+        &-total {
+            font-size: 1em;
+            margin-bottom: 8px;
+          }
+        &-value {
+            font-size: 2.6em;
+        }
+        &-porcentage {
+            margin-top: 30px;
+        }
+      }
+    }
+  }
+}
+
+// ========== Footer ============ //
+.attribution {
+  font-size: 14px;
+  text-align: center;
+  margin: 20px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
